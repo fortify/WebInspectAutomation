@@ -8,10 +8,16 @@ Sample WebInspect script for automating dynamic scanning and pushing results to 
 6. Uploads FPR to SSC
 
 ## Requirements
-*WebInspect 18.2+
-*Python 3.7
-*SSC 18.2+
-*Fortify update utility 18.2+
+1. WebInspect 18.2+
+2. Python 3.7
+3. SSC 18.2+
+4. Fortify update utility 18.2+
 
 ## Sample Command
 WebInspectAutomation.py BaseUrl http://WebInspectMachine:8083/webinspect/ DefaultFilePath "C:\DefaultFilePath" SSCUrl http://SSCServer:8080/ssc SSCAuthToken AuthTokenFromSSC ApplicationVersionID SSCAppVersionID ScanMode Payload
+
+## To Do
+1. Port to Java
+2. Incremental Scanning support
+3. URL scan mode
+4. Scan settings mode
