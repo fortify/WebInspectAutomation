@@ -1,5 +1,5 @@
 # WebInspect Automation
-Sample WebInspect script for automating dynamic scanning and pushing results to SSC
+Sample Python script for automating dynamic scanning with WebInspect and pushing results to SSC
 1. Checks for running scans and queues if an existing scan is running
 2. Takes payload.txt file from DefaultFilePath to start scan.  The payload.txt file is a JSON definition that defines the scan
 3. Starts scan saving scan ID for generating results
