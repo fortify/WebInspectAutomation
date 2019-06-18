@@ -11,7 +11,7 @@ Sample Python script for automating dynamic scanning with WebInspect and pushing
 1. WebInspect 18.2+
 2. Python 3.7
 3. SSC 18.2+
-4. Fortify update utility 18.2+
+4. Fortifyclient utility 18.2+
 
 ## Sample Command
 WebInspectAutomation.py BaseUrl http://WebInspectMachine:8083/webinspect/ DefaultFilePath "C:\DefaultFilePath" SSCUrl http://SSCServer:8080/ssc SSCAuthToken AuthTokenFromSSC ApplicationVersionID SSCAppVersionID ScanMode Payload
