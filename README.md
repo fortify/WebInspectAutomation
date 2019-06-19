@@ -18,6 +18,6 @@ WebInspectAutomation.py BaseUrl http://WebInspectMachine:8083/webinspect/ Defaul
 
 ## To Do
 1. Port to Java
-2. Incremental Scanning support
+2. Incremental scanning support
 3. URL scan mode
 4. Scan settings mode
