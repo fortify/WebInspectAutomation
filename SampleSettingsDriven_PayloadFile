@@ -1,0 +1,6 @@
+{
+    "settingsName": "Zero",
+    "overrides": {
+    	"ScanName":"SettingsDrivenScanName"
+    }
+}
