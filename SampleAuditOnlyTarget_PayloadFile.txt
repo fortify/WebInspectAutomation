@@ -1,0 +1,12 @@
+{
+  "settingsName": "Default",
+  "overrides": {
+    "scanName": "QuickDevScan",
+    "startUrls": [
+      "http://zero.webappsecurity.com:80/online-banking.html",
+      "http://zero.webappsecurity.com:80/feedback.html"
+    ],
+    "crawlAuditMode": "AuditOnly",
+    "PolicyID": 1
+  }
+}
