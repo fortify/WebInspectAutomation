@@ -20,11 +20,11 @@ WebInspectAutomation.py
 
 ## arguments.json
 This file contains the necessary parameter for the script.This file needs to be in the same directory as WebInspectAutomation.py
-BaseUrl : base url for web inspect
-DefaultFilePath : path where the payload file will exist and where results will be created. If empty it defaults to current directory
-SSCUrl : url to SSC
-SSCAuthToken : fortify token
-ApplicationVersionID : fortify application version
+- BaseUrl : base url for web inspect
+- DefaultFilePath : path where the payload file will exist and where results will be created. If empty it defaults to current directory
+- SSCUrl : url to SSC
+- SSCAuthToken : fortify token
+- ApplicationVersionID : fortify application version
 
 ## PayloadFile.txt
 
