@@ -1,0 +1,13 @@
+Contents:
+Bearer_endpoint.zip - A simple Rest API leveraging bearer tokens and dynamic auth
+BearerWorkflow.json - A Postman collection containing both login and workflow steps (pwc) for executing against bearer_endpoint
+BearerLogin.json - A Postman collection to be leveraged as a postman login collection (plc)
+BearerResponseStateRule.txt - A response state rule which grabs the bearer token generated from running the plc, and uses it in subsequent requests
+
+Instructions:
+1.  Install Newman and Node on WebInspect PC per Fortify Unplugged video
+2.  Extract Bearer_endpoint.zip
+3.  Navigate to Bearer_endpoint folder, and run NPM Start to run server
+4.  Place BearerWorkflow.json, BearerLogin.json, and BearerResponseStateRule.txt at c:\ (for this example).
+5.  Run C:\Program Files\Fortify\Fortify WebInspect>wi -pwc c:\BearerWorkflow.json -pdac -plc c:\BearerLogin.json -rs @c:\BearerResponseStateRule.txt -pls [BODY]failed
+

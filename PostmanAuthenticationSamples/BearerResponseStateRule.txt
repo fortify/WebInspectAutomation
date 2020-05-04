@@ -1,0 +1,1 @@
+<ArrayOfResponseStateElement><ResponseStateElement><name>TokenVariable</name><ReplaceRegexes><string>Authorization:\sBearer\s(?&lt;TokenVariable&gt;[^\r\n]*)\r\n</string></ReplaceRegexes><SearchRegexes><string>"token":"(?&lt;TokenVariable&gt;[-a-zA-Z0-9._~+/]+?=*)"}$</string></SearchRegexes></ResponseStateElement></ArrayOfResponseStateElement>
