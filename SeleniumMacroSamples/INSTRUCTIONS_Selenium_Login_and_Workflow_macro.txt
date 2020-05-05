@@ -1,0 +1,102 @@
+Summary:
+-Requires WebInspect 20.1
+-A project for selenium login and workflow macros, created using python, running on Chrome with standard chromedriver with added proxy to capabilities.
+-After download and unzipping the project replace "C:\Users\Administrator.AUTO-WIN81BASE\Desktop" with a path to the folder.
+
+
+################################################################################
+##############   WEBINSPECT 20.1 CLI INSTRUCTIONS, LOGIN MACRO   ###############
+################################################################################
+To run a scan with login macro and validate it in CLI
+wi.exe -slm "<SeleniumCommand><Command>"C:\Users\Administrator.AUTO-WIN81BASE\Desktop\zero_selenium_python_login\Python\Python37-32\python.exe" "C:\Users\Administrator.AUTO-WIN81BASE\Desktop\zero_selenium_python_login\pycharm\_jb_unittest_runner.py" --target SampleProjects/POMProjectDemo/Tests/tests.py</Command><AllowedHosts><string>http://zero.webappsecurity.com/</string></AllowedHosts><LogoutCondition>[HEADERS]Location:\s.*login.htm</LogoutCondition><WorkingDirectory>"C:\Users\Administrator.AUTO-WIN81BASE\Desktop\zero_selenium_python_login"</WorkingDirectory></SeleniumCommand>" -u http://zero.webappsecurity.com/
+
+
+
+################################################################################
+##############   WEBINSPECT 20.1 CLI INSTRUCTIONS, WORKFLOW MACRO   ###############
+################################################################################
+Run this command to start a scan using CLI with Administartor user.
+wi.exe -selenium_workflow "<ArrayOfSeleniumCommand><SeleniumCommand><Command>"C:\Users\Administrator.AUTO-WIN81BASE\Desktop\zero_selenium_python\Python\Python37-32\python.exe" "C:\Users\Administrator.AUTO-WIN81BASE\Desktop\zero_selenium_python\pycharm\_jb_unittest_runner.py" --target SampleProjects/POMProjectDemo/Tests/tests.py</Command><AllowedHosts><string>http://zero.webappsecurity.com/</string></AllowedHosts><WorkingDirectory>"C:\Users\Administrator.AUTO-WIN81BASE\Desktop\zero_selenium_python"</WorkingDirectory></SeleniumCommand></ArrayOfSeleniumCommand>" -xd -o -ps 1005
+
+
+
+
+
+
+################################################################################
+##############   WEBINSPECT 20.1 API INSTRUCTIONS, LOGIN MACRO   ###############
+################################################################################
+To create a scan using API you have to:
+1. Using POST /configuration/selenium/folder upload an archive
+2. Using GET /configuration/selenium/folder verify the folder, that it was uploaded successfully
+3. Using POST /configuration/selenium/macro create a selenium login macro
+
+Here is command to create a login macro
+
+{
+  "verifyMacro": true,
+  "name": "login_macro",
+  "command": "\"C:\\ProgramData\\HP\\HP WebInspect\\Settings\\SeleniumFiles\\zero_selenium_python_login\\zero_selenium_python_login\\Python\\Python37-32\\python.exe\" \"C:\\ProgramData\\HP\\HP WebInspect\\Settings\\SeleniumFiles\\zero_selenium_python_login\\zero_selenium_python_login\\pycharm\\_jb_unittest_runner.py\" --target SampleProjects/POMProjectDemo/Tests/tests.py",
+  "allowedHosts": [
+    "http://zero.webappsecurity.com/"
+  ],
+  "workingDirectory": "C:\\ProgramData\\HP\\HP WebInspect\\Settings\\SeleniumFiles\\zero_selenium_python_login\\zero_selenium_python_login",
+  "logoutCondition": "[HEADERS]Location:\\s.*login.htm"
+}
+
+After the login macro was created - it can be used in scan:
+4. Using POST /scanner/scans create a scan with created earlier macro
+
+{
+  "settingsName": "default",
+  "overrides": {
+    "scanName": "zero_test_login",
+    "startUrls": [
+      "http://zero.webappsecurity.com/"
+    ],
+    "crawlAuditMode": "CrawlAndAudit",
+    "loginMacro": "login_macro.webmacro",
+    "policyId": 1
+  }
+}
+
+
+
+
+################################################################################
+#############   WEBINSPECT 20.1 API INSTRUCTIONS, WORKFLOW MACRO   #############
+################################################################################
+To create a scan using API you have to:
+1. Using POST /configuration/selenium/folder upload an archive
+2. Using GET /configuration/selenium/folder verify the folder, that it was uploaded successfully
+3. Using POST /configuration/selenium/macro create a selenium workflow macro
+
+Here is command to create a workflow macro
+{
+  "verifyMacro": true,
+  "name": "workflow_macro",
+  "command": "\"C:\\ProgramData\\HP\\HP WebInspect\\Settings\\SeleniumFiles\\zero_selenium_python_workflow\\zero_selenium_python\\Python\\Python37-32\\python.exe\" \"C:\\ProgramData\\HP\\HP WebInspect\\Settings\\SeleniumFiles\\zero_selenium_python_workflow\\zero_selenium_python\\pycharm\\_jb_unittest_runner.py\" --target SampleProjects/POMProjectDemo/Tests/tests.py",
+  "allowedHosts": [
+    "http://zero.webappsecurity.com/"
+  ],
+  "workingDirectory": "C:\\ProgramData\\HP\\HP WebInspect\\Settings\\SeleniumFiles\\zero_selenium_python_workflow\\zero_selenium_python"
+}
+
+After the workflow macro was created - it can be used in scan:
+4. Using POST /scanner/scans create a scan with created earlier macro
+
+Here is command to create a scan
+{
+  "settingsName": "default",
+  "overrides": {
+    "scanName": "zero_workflow",
+    "startUrls": [
+      "http://zero.webappsecurity.com/"
+    ],
+    "crawlAuditMode": "CrawlAndAudit",
+    "workflowMacros": [
+      "workflow_macro.webmacro"
+    ],
+    "policyId": 1
+  }
+}
