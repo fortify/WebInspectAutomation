@@ -1,7 +1,13 @@
 Summary:
--Requires WebInspect 20.1
--A project for selenium login and workflow macros, created using python, running on Chrome with standard chromedriver with added proxy to capabilities.
--After download and unzipping the project replace "C:\Users\Administrator.AUTO-WIN81BASE\Desktop" with a path to the folder.
+A sample project for testing WebInspect 20.1's selenium login and workflow macro capabilities.
+Created using python, running on Chrome with standard chromedriver and proxy variables added to script.
+Selenium scripts login to sample app at http://zero.webappsecurity.com
+
+Requirements:
+-WebInspect 20.1 or higher
+-Download fully functional selenium webdriver project files referenced below from
+ftp://wiauto:X5hd!XV7@ftp-pro.houston.softwaregrp.com/
+-After download and unzipping the project files, replace any references to "C:\Users\Administrator.AUTO-WIN81BASE\Desktop" with a path to your folder.
 
 
 ################################################################################
