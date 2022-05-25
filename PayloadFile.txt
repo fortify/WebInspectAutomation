@@ -1,0 +1,16 @@
+
+{
+
+	"settingsName": "Default",
+
+    "overrides": {
+
+    "ScanName": "FullStandardSettingScan",
+
+    "StartUrls": ["http://zero.webappsecurity.com:80"],
+
+    "CrawlAuditMode": "CrawlOnly"
+
+    }
+
+}

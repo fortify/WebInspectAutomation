@@ -1,0 +1,8 @@
+{
+    "BaseUrl" : "http://gcwcpsqlv00476:8083/webinspect",
+    "DefaultFilePath" : "",
+    "SSCUrl" : "sscurl",
+    "SSCAuthToken" : "authtoken",
+    "ApplicationVersionID" : "versionId"
+
+}
